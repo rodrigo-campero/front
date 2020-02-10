@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbThemeModule, NbSidebarModule, NbMenuModule, NbLayoutModule, NbIconModule, NbButtonModule } from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbSidebarModule,
+  NbMenuModule,
+  NbLayoutModule,
+  NbIconModule,
+  NbButtonModule,
+  NbActionsModule
+} from '@nebular/theme';
 import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-
-
 
 @NgModule({
   declarations: [],
@@ -24,7 +30,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbLayoutModule,
     NbEvaIconsModule,
     NbIconModule,
-    NbButtonModule
+    NbButtonModule,
+    NbActionsModule
   ],
   exports: [
     NbThemeModule,
@@ -34,7 +41,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbLayoutModule,
     NbEvaIconsModule,
     NbIconModule,
-    NbButtonModule
+    NbButtonModule,
+    NbActionsModule
   ]
 })
 export class AppNebularModule { }

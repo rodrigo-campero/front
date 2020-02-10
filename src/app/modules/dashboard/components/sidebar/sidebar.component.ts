@@ -10,54 +10,29 @@ export class SidebarComponent implements OnInit {
 
   items = [
     {
-      title: 'Profile',
-      expanded: true,
+      title: 'Home',
+      link: ['/dashboard'],
+      icon: 'home'
+    },
+    {
+      title: 'Calendar',
+      link: ['calendar'],
+      icon: 'calendar'
+    },
+    {
+      title: 'Reports',
+      expanded: false,
       children: [
         {
-          title: 'Change Password',
-          link: [], // goes into angular `routerLink`,
-          icon: 'home'
+          title: 'Bots 1',
+          link: []
         },
         {
-          title: 'Privacy Policy',
-          url: '#', // goes directly into `href` attribute
+          title: 'Bots 1',
+          url: '#',
         },
         {
           title: 'Logout',
-          link: [],
-        },
-      ],
-    },
-    {
-      title: 'Shopping Bag',
-      children: [
-        {
-          title: 'First Product',
-          link: [], // goes into angular `routerLink`
-        },
-        {
-          title: 'Second Product',
-          url: '#', // goes directly into `href` attribute
-        },
-        {
-          title: 'Third Product',
-          link: [],
-        },
-      ],
-    },
-    {
-      title: 'Orders',
-      children: [
-        {
-          title: 'First Order',
-          link: [], // goes into angular `routerLink`
-        },
-        {
-          title: 'Second Order',
-          url: '#', // goes directly into `href` attribute
-        },
-        {
-          title: 'Third Order',
           link: [],
         },
       ],

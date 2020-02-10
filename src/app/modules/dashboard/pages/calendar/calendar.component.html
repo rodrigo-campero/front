@@ -1,1 +1,29 @@
-<full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
+<full-calendar 
+    #calendar
+    defaultView="dayGridMonth"
+    [plugins]="calendarPlugins"
+    [header]="calendarHeader"
+    [allDaySlot]="false"
+    [slotEventOverlap]="true"
+    [editable]="true"
+    [selectable]="true"
+    [timeZone]="'local'"
+    [nowIndicator]="true"
+    [aspectRatio]="1"
+    height="parent"
+    [firstDay]="1"
+    [minTime]="'06:00'"
+    [maxTime]="'23:00'"
+    [events]="calendarEvents"
+    [weekends]="calendarWeekends"
+    [eventLimit]="true"
+    eventLimitText="Mais"
+    [views]="calendarViews"
+    [buttonText]="calendarButtonText"
+    allDayText="dia inteiro"
+    weekLabel="Sm"
+    noEventsMessage="Não há eventos para mostrar"
+    locale="pt-br"
+    (dateClick)="handleDateClick($event)"
+    (eventClick)="eventClick($event)">
+</full-calendar>
