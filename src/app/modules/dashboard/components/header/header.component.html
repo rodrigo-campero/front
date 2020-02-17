@@ -1,11 +1,14 @@
 <nav class="rpa-header">
     <div class="header-container">
-        <button nbButton ghost (click)="toggle()">
-            <nb-icon icon="menu-2-outline"></nb-icon>
-        </button>
+        <nb-actions size="medium">
+            <nb-action icon="menu-2-outline" (click)="toggle()"></nb-action>
+            <nb-action>RPA</nb-action>
+        </nb-actions>
+        
     </div>
     <div class="header-container">
         <nb-actions size="medium">
+            <nb-action icon="settings-outline" [routerLink]="['/admin']"></nb-action>
             <nb-action icon="search-outline"></nb-action>
             <nb-action icon="person-outline"></nb-action>
         </nb-actions>

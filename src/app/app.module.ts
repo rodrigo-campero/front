@@ -11,6 +11,8 @@ import { AppNebularModule } from './fw/app-nebular/app-nebular.module';
 import { SharedModule } from './shared/shared.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdminModule } from './modules/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,9 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppNebularModule,
-    SharedModule,
     DashboardModule,
-    AuthModule
+    AuthModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

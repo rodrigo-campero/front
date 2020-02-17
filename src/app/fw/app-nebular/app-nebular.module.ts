@@ -7,7 +7,11 @@ import {
   NbLayoutModule,
   NbIconModule,
   NbButtonModule,
-  NbActionsModule
+  NbActionsModule,
+  NbDialogModule,
+  NbCardModule,
+  NbInputModule,
+  NbDatepickerModule
 } from '@nebular/theme';
 import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -27,22 +31,30 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
       ],
       forms: {},
     }),
+    NbDialogModule.forRoot(),
+    NbDatepickerModule.forRoot(),
     NbLayoutModule,
     NbEvaIconsModule,
     NbIconModule,
     NbButtonModule,
-    NbActionsModule
+    NbActionsModule,
+    NbCardModule,
+    NbInputModule
   ],
   exports: [
     NbThemeModule,
     NbSidebarModule,
     NbMenuModule,
     NbAuthModule,
+    NbDialogModule,
+    NbDatepickerModule,
     NbLayoutModule,
     NbEvaIconsModule,
     NbIconModule,
     NbButtonModule,
-    NbActionsModule
+    NbActionsModule,
+    NbCardModule,
+    NbInputModule
   ]
 })
 export class AppNebularModule { }

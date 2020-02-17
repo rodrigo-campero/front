@@ -11,15 +11,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
-
+import { AddEditEventCalendarComponent } from './components/add-edit-event-calendar/add-edit-event-calendar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HomeComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent, CalendarComponent],
+  declarations: [HomeComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent, CalendarComponent, AddEditEventCalendarComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    AppNebularModule,
     FullCalendarModule,
     DashboardRoutingModule,
-    AppNebularModule
-  ]
+  ],
+  entryComponents: [AddEditEventCalendarComponent]
 })
 export class DashboardModule { }

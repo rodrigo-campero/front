@@ -10,11 +10,6 @@ export class SidebarComponent implements OnInit {
 
   items = [
     {
-      title: 'Home',
-      link: ['/dashboard'],
-      icon: 'home'
-    },
-    {
       title: 'Calendar',
       link: ['calendar'],
       icon: 'calendar'

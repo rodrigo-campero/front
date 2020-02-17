@@ -5,6 +5,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGrigPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction'; // for dateClick
 import { ToolbarInput, ButtonTextCompoundInput } from '@fullcalendar/core/types/input-types';
+import { NbDialogService } from '@nebular/theme';
+import { AddEditEventCalendarComponent } from '../../components/add-edit-event-calendar/add-edit-event-calendar.component';
 
 @Component({
   selector: 'app-calendar',
@@ -55,21 +57,33 @@ export class CalendarComponent implements OnInit {
     calendarApi.gotoDate('2000-01-01');
   }
 
-  handleDateClick(arg) {
-    if (confirm('Would you like to add an event to ' + arg.dateStr + ' ?')) {
-      this.calendarEvents = this.calendarEvents.concat({
-        title: 'New Event',
-        start: arg.date,
-        allDay: arg.allDay
+  open(arg) {
+    this.dialogService.open(AddEditEventCalendarComponent,
+      {
+        context: {
+          start: arg.date
+        }
+      }).onClose.subscribe(res => {
+        if (res) {
+          this.calendarEvents = this.calendarEvents.concat({
+            title: res.title,
+            start: res.start,
+            end: res.end,
+            allDay: arg.allDay
+          });
+        }
       });
-    }
+  }
+
+  handleDateClick(arg) {
+    this.open(arg);
   }
 
   eventClick(arg) {
     console.log(arg);
   }
 
-  constructor() { }
+  constructor(private dialogService: NbDialogService) { }
 
   ngOnInit(): void {
   }
