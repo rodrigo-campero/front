@@ -1,25 +1,34 @@
 <nb-card>
-    <nb-card-header>New Event</nb-card-header>
+    <nb-card-header>Nova tarefa</nb-card-header>
     <nb-card-body>
         <form [formGroup]="eventCalendarForm" (ngSubmit)="onSubmit(eventCalendarForm)" id="eventCalendarForm">
-            <input formControlName="title" nbInput fullWidth status="basic">
-            <div *ngIf="eventCalendarForm.errors && eventCalendarForm.get('title').hasError('required')">
-                Oops, please provide a title!
-            </div>
-            <input formControlName="start" nbInput fullWidth status="basic" [nbDatepicker]="formpickerStart">
-            <nb-datepicker #formpickerStart></nb-datepicker>
-            <div *ngIf="eventCalendarForm.errors && eventCalendarForm.get('start').hasError('required')">
-                Oops, please provide a start!
-            </div>
-            <input formControlName="end" nbInput fullWidth status="basic" [nbDatepicker]="formpickerEnd">
-            <nb-datepicker #formpickerEnd></nb-datepicker>
-            <div *ngIf="eventCalendarForm.errors && eventCalendarForm.get('end').hasError('required')">
-                Oops, please provide a end!
+            <div class="cf-ns nl2 nr2">
+                <div class="fl-ns w-100-ns pa1">
+                    <input formControlName="title" nbInput fullWidth status="basic">
+                    <div *ngIf="eventCalendarForm.errors && eventCalendarForm.get('title').hasError('required')">
+                        Oops, please provide a title!
+                    </div>
+                </div>
+                <div class="fl-ns w-50-ns pa1">
+                    <input formControlName="start" nbInput fullWidth status="basic" [nbDatepicker]="formpickerStart">
+                    <nb-datepicker #formpickerStart></nb-datepicker>
+                    <div *ngIf="eventCalendarForm.errors && eventCalendarForm.get('start').hasError('required')">
+                        Oops, please provide a start!
+                    </div>
+                </div>
+                <div class="fl-ns w-50-ns pa1">
+                    <input formControlName="end" nbInput fullWidth status="basic" [nbDatepicker]="formpickerEnd">
+                    <nb-datepicker #formpickerEnd></nb-datepicker>
+                    <div *ngIf="eventCalendarForm.errors && eventCalendarForm.get('end').hasError('required')">
+                        Oops, please provide a end!
+                    </div>
+                </div>
             </div>
         </form>
     </nb-card-body>
     <nb-card-footer>
-        <button nbButton (click)="close()">Close Dialog</button>
-        <button nbButton form="eventCalendarForm" type="submit">Enviar</button>
+        <button nbButton (click)="close()" class="fr-ns mr1">Fechar</button>
+        <button nbButton form="eventCalendarForm" type="button" (click)="onSubmit(eventCalendarForm)"
+            class="fr-ns mr1">Enviar</button>
     </nb-card-footer>
 </nb-card>

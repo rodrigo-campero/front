@@ -1,1 +1,28 @@
-<p>login works!</p>
+<nb-card accent="info">
+    <nb-card-body>
+        <div class="auth-block">
+            <h1 class="title">Login</h1>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                <div class="form-control-group">
+                    <label for="input-email" class="label">Usuário:</label>
+                    <input nbInput fullWidth name="username" id="input-email" formControlName="username">
+                    <p class="caption status-danger"
+                        *ngIf="formSubmitAttempt && f.username.errors && f.username.errors.required"> Usuário é
+                        obrigatório.
+                    </p>
+                </div>
+                <div class="form-control-group">
+                    <label for="input-password" class="label">Password:</label>
+                    <input nbInput fullWidth name="password" type="password" id="input-password"
+                        formControlName="password">
+                    <p class="caption status-danger"
+                        *ngIf="formSubmitAttempt && f.password.errors && f.password.errors.required"> Senha é
+                        obrigatório.
+                    </p>
+                </div>
+                <button nbButton fullWidth status="{{loginForm.valid ? 'success' : 'basic'}}"
+                    type="submit">Acessar</button>
+            </form>
+        </div>
+    </nb-card-body>
+</nb-card>

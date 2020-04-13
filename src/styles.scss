@@ -1,29 +1,12 @@
-@import "themes";
+nb-layout-header {
+    .fixed {
+        width: 100%;
+        background-color: #fff;
+    }
 
-@import "~@nebular/theme/styles/globals";
-@import "~@nebular/auth/styles/globals";
-@import "~@fullcalendar/core/main.css";
-@import "~@fullcalendar/daygrid/main.css";
-@import "~@fullcalendar/timegrid/main.css";
-
-@include nb-install() {
-  @include nb-theme-global();
-  @include nb-auth-global();
-}
-/* You can add global styles to this file, and also import other style files */
-
-$height-header: 64px;
-$min-height-layout: 100vh;
-
-.nb-theme-default nb-layout-header nav {
-  height: $height-header;
-  padding: 0;
-}
-
-.nb-theme-default nb-layout-header.fixed ~ .layout-container {
-  padding-top: $height-header;
-  min-height: $min-height-layout;
-  nb-sidebar .main-container {
-    height: calc(#{$min-height-layout} - #{$height-header});
-  }
+    nav {
+        align-items: inherit !important;
+        justify-content: inherit !important;
+        display: inherit !important;
+    }
 }

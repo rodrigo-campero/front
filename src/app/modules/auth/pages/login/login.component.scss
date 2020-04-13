@@ -1,0 +1,25 @@
+nb-card {
+    margin: 0;
+    height: calc(100vh - 5rem);
+
+    nb-card-body {
+        display: flex;
+        width: 100%;
+
+        .auth-block {
+            margin: auto;
+            width: 100%;
+            display: block;
+            max-width: 35rem;
+
+            .form-control-group {
+                margin-bottom: 2rem;
+
+                .label {
+                    display: block;
+                    margin-bottom: .5rem;
+                }
+            }
+        }
+    }
+}

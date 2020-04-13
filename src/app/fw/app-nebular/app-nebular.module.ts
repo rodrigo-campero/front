@@ -1,60 +1,41 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  NbThemeModule,
-  NbSidebarModule,
-  NbMenuModule,
-  NbLayoutModule,
-  NbIconModule,
-  NbButtonModule,
-  NbActionsModule,
-  NbDialogModule,
-  NbCardModule,
-  NbInputModule,
-  NbDatepickerModule
-} from '@nebular/theme';
-import { NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
+import { NgModule } from '@angular/core';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbActionsModule, NbButtonModule, NbCardModule, NbCheckboxModule, NbDatepickerModule, NbDialogModule, NbIconModule, NbInputModule, NbLayoutModule, NbMenuModule, NbSidebarModule, NbThemeModule } from '@nebular/theme';
+// forRoot: module has service, add in all app
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbThemeModule.forRoot(),
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
-    NbAuthModule.forRoot({
-      strategies: [
-        NbPasswordAuthStrategy.setup({
-          name: 'email',
-        }),
-      ],
-      forms: {},
-    }),
     NbDialogModule.forRoot(),
     NbDatepickerModule.forRoot(),
-    NbLayoutModule,
     NbEvaIconsModule,
     NbIconModule,
     NbButtonModule,
     NbActionsModule,
     NbCardModule,
-    NbInputModule
+    NbInputModule,
+    NbCheckboxModule
   ],
   exports: [
+    NbLayoutModule,
     NbThemeModule,
     NbSidebarModule,
     NbMenuModule,
-    NbAuthModule,
     NbDialogModule,
     NbDatepickerModule,
-    NbLayoutModule,
     NbEvaIconsModule,
     NbIconModule,
     NbButtonModule,
     NbActionsModule,
     NbCardModule,
-    NbInputModule
+    NbInputModule,
+    NbCheckboxModule
   ]
 })
 export class AppNebularModule { }

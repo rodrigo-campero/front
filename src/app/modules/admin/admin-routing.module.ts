@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { ProcessListComponent } from './pages/process-list/process-list.component';
-import { ProcessAddEditComponent } from './pages/process-add-edit/process-add-edit.component';
-import { ParameterListComponent } from './pages/parameter-list/parameter-list.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './admin.component';
 import { ParameterAddEditComponent } from './pages/parameter-add-edit/parameter-add-edit.component';
+import { ParameterListComponent } from './pages/parameter-list/parameter-list.component';
+import { ProcessAddEditComponent } from './pages/process-add-edit/process-add-edit.component';
+import { ProcessListComponent } from './pages/process-list/process-list.component';
 
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: '',
+    component: AdminComponent,
     children: [
       {
         path: '',

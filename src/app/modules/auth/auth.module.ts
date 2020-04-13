@@ -1,19 +1,23 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
-import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
 
-
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, AuthComponent, LoginComponent],
+  declarations: [
+    AuthComponent,
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent
+  ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    SharedModule
   ]
 })
 export class AuthModule { }

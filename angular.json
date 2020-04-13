@@ -28,8 +28,16 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "node_modules/tachyons/css/tachyons.min.css",
+              "src/sass/styles.scss",
               "src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/sass"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -124,6 +132,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "rpa-front"
 }
