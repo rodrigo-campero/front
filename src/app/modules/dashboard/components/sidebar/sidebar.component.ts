@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,24 +10,25 @@ export class SidebarComponent implements OnInit {
 
   items = [
     {
-      title: 'Calendar',
+      title: 'Calendário',
       link: ['calendar'],
       icon: 'calendar'
     },
     {
-      title: 'Reports',
+      title: 'Relatórios',
       expanded: false,
+      icon: 'file-text-outline',
       children: [
         {
-          title: 'Bots 1',
+          title: 'Bot 1',
           link: []
         },
         {
-          title: 'Bots 1',
-          url: '#',
+          title: 'Bot 2',
+          link: []
         },
         {
-          title: 'Logout',
+          title: 'Indicadores',
           link: [],
         },
       ],

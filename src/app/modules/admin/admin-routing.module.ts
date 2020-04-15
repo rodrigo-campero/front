@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
+import { BotAddEditComponent } from './pages/bot-add-edit/bot-add-edit.component';
+import { BotListComponent } from './pages/bot-list/bot-list.component';
 import { ParameterAddEditComponent } from './pages/parameter-add-edit/parameter-add-edit.component';
 import { ParameterListComponent } from './pages/parameter-list/parameter-list.component';
 import { ProcessAddEditComponent } from './pages/process-add-edit/process-add-edit.component';
@@ -42,19 +44,19 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component: ProcessListComponent
+            component: BotListComponent
           },
           {
             path: 'list',
-            component: ProcessListComponent
+            component: BotListComponent
           },
           {
             path: 'modify',
-            component: ProcessAddEditComponent
+            component: BotAddEditComponent
           },
           {
             path: 'modify/:id',
-            component: ProcessAddEditComponent
+            component: BotAddEditComponent
           }
         ]
       },

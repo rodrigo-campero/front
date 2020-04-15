@@ -25,10 +25,7 @@ export class CalendarComponent implements OnInit {
   calendarVisible = true;
   calendarPlugins = [interactionPlugin, dayGridPlugin, timeGrigPlugin, listPlugin, timeLinePlugin];
   calendarWeekends = true;
-  calendarEvents: EventInput[] = [
-    { title: 'All Day Event', start: '2020-02-01' },
-    { title: 'Long Event', start: '2020-02-07', end: '2020-02-10' },
-    { groupId: '999', title: 'Repeating Event', start: '2020-02-09T16:00:00+00:00' }, { groupId: '999', title: 'Repeating Event', start: '2020-02-16T16:00:00+00:00' }, { title: 'Conference', start: '2020-02-09', end: '2020-02-11' }, { title: 'Meeting', start: '2020-02-10T10:30:00+00:00', end: '2020-02-10T12:30:00+00:00' }, { title: 'Lunch', start: '2020-02-10T12:00:00+00:00' }, { title: 'Birthday Party', start: '2020-02-11T07:00:00+00:00' }, { url: 'http:\/\/google.com\/', title: 'Click for Google', start: '2020-02-28' }, { title: 'Meeting', start: '2020-02-10T14:30:00+00:00' }, { title: 'Happy Hour', start: '2020-02-10T17:30:00+00:00' }, { title: 'Dinner', start: '2020-02-10T20:00:00+00:00' }];
+  calendarEvents: EventInput[] = [];
   calendarViews: {
     timeGrid: {
       eventLimit: 6 // adjust to 6 only for timeGridWeek/timeGridDay
@@ -53,6 +50,7 @@ export class CalendarComponent implements OnInit {
   height: number;
   aspectRatio = 0.82;
   defaultView = 'dayGridMonth';
+  className = Array('red', 'green', 'gray');
 
   toggleVisible() {
     this.calendarVisible = !this.calendarVisible;
@@ -85,6 +83,25 @@ export class CalendarComponent implements OnInit {
       });
   }
 
+  randomEvents() {
+    for (let index = 0; index < 20000; index++) {
+      const date = this.randomDate(new Date(2019, 0, 1), new Date());
+      const classRandom = this.className[Math.floor(Math.random() * this.className.length)];
+      this.calendarEvents = this.calendarEvents.concat({
+        title: `Event ${index}`,
+        start: date,
+        end: date,
+        color: classRandom,
+        allDay: index % 2 == 0
+      });
+    }
+  }
+
+  randomDate(start, end) {
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  }
+
+
   handleDateClick(arg) {
     this.open(arg);
   }
@@ -96,6 +113,7 @@ export class CalendarComponent implements OnInit {
     this.innerWidth = window.innerWidth;
     this.height = this.aspectRatio * window.innerHeight;
     this.check();
+    this.randomEvents();
   }
 
   @HostListener('window:resize', ['$event'])

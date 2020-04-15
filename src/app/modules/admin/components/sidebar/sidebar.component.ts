@@ -7,6 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  items = [
+    {
+      title: 'Bots',
+      link: ['bots'],
+      icon: 'monitor-outline'
+    },
+    {
+      title: 'Processos',
+      link: ['process'],
+      icon: 'archive-outline'
+    },
+    {
+      title: 'Parametros',
+      link: ['parameters'],
+      icon: 'options-outline'
+    },
+    {
+      title: 'Email',
+      icon: 'email-outline'
+    },
+    {
+      title: 'Telegram',
+      icon: 'paper-plane-outline'
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {
