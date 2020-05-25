@@ -10,6 +10,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { HealthDailyProcessesComponent } from './pages/health-daily-processes/health-daily-processes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './pages/home/home.component';
     FooterComponent,
     SidebarComponent,
     CalendarComponent,
-    AddEditEventCalendarComponent
+    AddEditEventCalendarComponent,
+    HealthDailyProcessesComponent
   ],
   imports: [
     CommonModule,
